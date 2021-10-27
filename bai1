@@ -1,0 +1,16 @@
+function allLongestStrings(inputArray) {
+    let arr = [];
+    let maxString = inputArray[0];
+    for (let i = 1; i < inputArray.length; i++) {
+        if (inputArray[i].length > maxString.length) {
+            maxString = inputArray[i];
+        }
+    }
+    arr.push(maxString);
+    for (let i = 1; i < inputArray.length; i++) {
+        if (inputArray[i].length === maxString.length && inputArray[i] != maxString) {
+            arr.push(inputArray[i]);
+        }
+    }
+    return arr;
+}
